@@ -69,3 +69,71 @@ The project establishes the following objectives:
 - **By Week 9:** Enable service requests, credit transfers, and transaction history with at least 90% of test cases passing during internal testing.  
 - **By Week 11:** A completely functional MVP with all required features operational and at least 80% of test users expressing satisfaction with usability.  
 - **By 3 months post-pilot:** Aim to have 500+ student accounts created and at least 200 successful service exchanges documented.  
+
+---
+# User Research Report
+
+## Purpose
+The purpose of this research was to better understand the needs, habits, and challenges of Flinders University students in relation to skill sharing. Since FUSS is designed as a peer-to-peer platform where students can trade skills using a credit system, it was important to identify what students value in such a service.  
+
+This research focuses on finding out:
+- What kinds of support students look for  
+- What motivates them to offer help  
+- What features would make the platform trustworthy and easy to use  
+
+---
+
+## Research Methods
+- **Surveys**: A short survey was shared with Flinders students (mainly through Facebook groups) asking about their study needs, skills they could share, and whether they’d be open to a credit system instead of money.  
+- **Interviews**: Short chats with students from different study levels (undergrad, postgrad, and international) to gather personal perspectives on what they’d want from a site like this.  
+- **Competitor analysis**: Reviewed existing platforms (like Gumtree, Tandem, and Airtasker) to see what works well and what doesn’t.  
+- **Observation**: Informally watched how students already trade help (e.g., in group chats, student forums) and noticed that things are often based on favours or swapping notes.  
+
+---
+
+## User Personas
+
+### Persona 1 – James Walker
+- **Age**: 19  
+- **Background**: 2nd year Computer Science undergrad  
+- **Demographics**: Lives on campus, part-time barista, tight budget  
+- **Technical ability**: High (comfortable with most software, uses PC and Android phone daily)  
+- **Goals and needs**: Wants affordable tutoring for statistics and essay writing. Happy to trade his IT troubleshooting and coding help.  
+- **Motivations**: Save money, meet other students, and get fast help without waiting for formal tutoring.  
+- **Scenario**: James has a programming assignment that’s fine, but his essay is falling behind. He earns two FUSS Credits by helping another student fix a laptop issue, then spends them to get essay feedback from a postgrad.  
+
+### Persona 2 – Emily Grant
+- **Age**: 32  
+- **Background**: Mature-age student in Master of Social Work  
+- **Demographics**: Lives off-campus, part-time job, family responsibilities  
+- **Technical ability**: Moderate (mainly uses a laptop and iPad, sometimes struggles with new apps)  
+- **Goals and needs**: Wants flexible, peer-to-peer help in areas like academic writing and presentation feedback. She can offer mentoring, time management advice, and real-world work experience.  
+- **Motivations**: Balance study with family, avoid expensive tutors, and share her professional background to help others.  
+- **Scenario**: Emily wants feedback on a research paper draft but doesn’t want to pay for a professional editor. She earns FUSS Credits by mentoring a first-year student in stress management, then spends them to get writing support from a PhD student.  
+
+---
+
+## Competitor Analysis
+
+### Gumtree (Services Section)
+- **Strengths**: Big audience, easy to post, lots of categories.  
+- **Weaknesses**: Mainly focused on paid services, not skill-sharing. Trust and safety are a concern.  
+- **Takeaway for FUSS**: Keep it simple to browse like Gumtree, but focus on trust and credits instead of money.  
+
+### Tandem (Language Exchange App)
+- **Strengths**: Great for matching people who want to swap skills (languages). Easy app design.  
+- **Weaknesses**: Only supports language learning, not broader skills.  
+- **Takeaway for FUSS**: Copy the “exchange” idea but expand it beyond languages to study help, IT support, and life skills.  
+
+### Airtasker
+- **Strengths**: Strong system for tasks, reviews, and payments. Good for finding short jobs.  
+- **Weaknesses**: Money-based, competitive, not student-friendly.  
+- **Takeaway for FUSS**: A student version of this idea with credits instead of money would make it more accessible and less intimidating.  
+
+---
+
+## Insights
+- Students don’t always want to pay for help but are open to trading skills.  
+- Trust is important, especially for international and new students. Profiles, credits, and basic messaging can help build this.  
+- A credit system makes it feel fair and keeps things balanced without needing money.  
+- Mobile-friendly design is essential since students often check things on the go.  
