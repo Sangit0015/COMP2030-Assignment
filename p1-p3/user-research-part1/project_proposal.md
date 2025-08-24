@@ -137,3 +137,15 @@ This research focuses on finding out:
 - Trust is important, especially for international and new students. Profiles, credits, and basic messaging can help build this.  
 - A credit system makes it feel fair and keeps things balanced without needing money.  
 - Mobile-friendly design is essential since students often check things on the go.  
+
+---
+
+# Low fidelity Wire-frame
+
+## Wireframe
+https://www.figma.com/design/LS2NibeK0V8CxoMKB0aQFk/wireframes-miro?t=EuHEUHGjnm6azzNX-1
+_note: because exporting the wireframes were making it low quality here is a link to the figma._
+
+## Storyboard
+https://www.figma.com/design/zQ0YSVvp00HYzyS4sFFtXh/Untitled?node-id=0-1&t=3OHT8r9fFmj4do3D-1
+_note: because exporting the storyboard were making it low quality here is a link to the figma._
