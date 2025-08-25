@@ -140,6 +140,39 @@ This research focuses on finding out:
 
 ---
 
+# Information Architecutre
+
+## Site Map
+
+The site map below outlines the overall structure of our platform (FUSS). Each branch contains relatively logically tied functions and pages which insures good User Experience.
+
+[📄 View Site Map (PDF)](./images/Site%20map.pdf)
+_note: if the sitemap is too blury or hard to view please use the link below to view it on miro (pdf viewer is required to view pdf on vs code). Thank you_
+
+https://miro.com/app/board/uXjVJQw94Fs=/?share_link_id=437262778022
+
+## User Flow
+
+The following userflow diagrams highlight key user flows nagivating different parts of the application.
+- **To request a skill**
+
+![Request a skill UserFlow ](./images/image-2.png)
+
+- **To compose or send a message**
+
+![Compose/send message UserFlow ](./images/image-1.png)
+
+- **To check user credits**
+
+![Check Credits UserFlow ](./images/image.png)
+
+_note: if the userflow diagrams is too blury or hard to view please use the link below to view it on miro. Thank you_
+
+https://miro.com/app/board/uXjVJQw6kS4=/?share_link_id=493558782324
+
+
+---
+
 # Low fidelity Wire-frame
 
 ## Wireframe
