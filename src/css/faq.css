@@ -1,0 +1,22 @@
+.faq { display: grid; gap: 10px; }
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(180deg, #101722, #0f1622);
+  color: #e8f0f7;
+  border: 1px solid #1f2a37;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.faq-q:focus { outline: 3px solid rgba(244,197,66,.35); }
+.faq-a {
+  display: none;
+  background: #0f1722;
+  border: 1px solid #1f2a37;
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #c9d7e6;
+}
+.faq-a.open { display: block; }

@@ -1,0 +1,170 @@
+header {
+    background-color: #FFD700;
+    color: #F5F5F5;
+    padding: 20px 0;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    transition: top 0.3s ease; 
+    z-index: 1000; 
+    height: 120px;
+}
+
+.container-01 {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 50px;
+  width: 400px;
+  flex: 1;
+}
+
+.logoM {
+    height: 70px;
+    margin-left: 80px;
+}
+
+.right-section {
+  margin-right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: end;
+  flex: 1;
+  flex-direction: row;
+}
+
+/* Buttons */
+.dashboard-button,
+.skills-button,
+.activities-button,
+.credits-button,
+.transactions-button,
+.inbox-button,
+.admin-button {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  border: none;
+  background-color: #FFD700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: url('cursor/icons8-cursor-32.png'), pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex-direction: row;
+}
+
+/* Icons */
+.dashboard-icon,
+.skills-icon,
+.activities-icon,
+.credits-icon,
+.transactions-icon,
+.inbox-icon,
+.admin-icon {
+  height: 45px;
+  width: 45px;
+  display: block;
+}
+
+/* Tooltips */
+.dashboard-button .tooltip,
+.skills-button .tooltip,
+.activities-button .tooltip,
+.credits-button .tooltip,
+.transactions-button .tooltip,
+.inbox-button .tooltip,
+.admin-button .tooltip {
+  position: absolute;
+  background-color: rgba(2, 36, 60, 0.9);
+  color: #F5F5F5;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 16px;
+  bottom: -30px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.dashboard-button:hover .tooltip,
+.skills-button:hover .tooltip,
+.activities-button:hover .tooltip,
+.credits-button:hover .tooltip,
+.transactions-button:hover .tooltip,
+.inbox-button:hover .tooltip,
+.admin-button:hover .tooltip {
+  opacity: 1;
+}
+
+
+.dashboard-button img,
+.skills-button img,
+.activities-button img,
+.credits-button img,
+.transactions-button img,
+.inbox-button img,
+.admin-button img {
+  transition: transform 0.5s ease;
+}
+
+.dashboard-button:hover img,
+.skills-button:hover img,
+.activities-button:hover img,
+.credits-button:hover img,
+.transactions-button:hover img,
+.inbox-button:hover img,
+.admin-button:hover img {
+  transform: scale(1.3);
+}
+
+
+.right-section {
+  margin-right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 70px; 
+  justify-content: end;
+  flex: 1;
+  flex-direction: row;
+}
+
+/* Active underline */
+.dashboard-button.active,
+.skills-button.active,
+.activities-button.active,
+.credits-button.active,
+.transactions-button.active,
+.inbox-button.active,
+.admin-button.active {
+    position: relative;
+}
+
+.dashboard-button.active::after, 
+.skills-button.active::after,
+.activities-button.active::after,
+.credits-button.active::after,
+.transactions-button.active::after,
+.inbox-button.active::after,
+.admin-button.active::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #02243C;
+}

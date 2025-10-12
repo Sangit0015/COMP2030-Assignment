@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;  
+  background-color: #fff;  
+}
+
+#site-footer { 
+  width:100%; 
+  color:#F5F5F5; 
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top { background:#02243C; }
+.footer-inner{
+  max-width:1200px;        
+  margin:0 auto;
+  padding:40px 24px;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(240px,1fr));
+  gap:48px;
+  box-sizing:border-box;
+}
+
+.footer-col{
+  width: 400px;
+}
+.footer-col h3{
+  margin:0 0 16px;
+  font: 600 20px/1.2;
+  color:#FFD700;
+}
+
+.footer-col p{ 
+  margin:10px 0; 
+  line-height:1.6; 
+  font: 100 15px/1.2 "EB Garamond", Arial, sans-serif;
+}
+
+.socials {
+  margin-top: 10px;
+  margin-left: 0px;
+}
+
+.socials a {
+  color: #f5f5f5;
+  margin: 10px 10px;
+  font-size: 18px;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+  cursor: url('cursor/icons8-cursor-32.png'),auto;
+}
+
+.footer-links ul{ 
+  list-style:none; 
+  margin:0; 
+  padding:0 ; 
+}
+
+.footer-links li{ 
+  margin:10px 0; 
+  font: 100 15px/1.2 "EB Garamond", Arial, sans-serif;
+}
+
+.footer-links li::before, 
+.footer-links li::marker{ 
+  content:none !important; 
+}
+
+.footer-links a{
+  color:#F5F5F5; 
+  text-decoration:none; 
+  transition:color .2s;
+}
+.footer-links a:hover{ 
+  color:#FFD700; 
+  text-decoration:underline; 
+}
+
+
+.footer-bottom{ 
+  background:#FFD700; 
+  color:#02243C; 
+}
+
+.footer-bottom__inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  box-sizing:border-box;
+}
+
+.footer-bottom__inner p{ 
+  margin:0; 
+}
+
+.footer-logo{ 
+  max-width:120px; 
+  height:auto; 
+  display:block; 
+}
+
+
+@media (max-width:900px){
+  .footer-inner{ grid-template-columns:1fr; gap:24px; }
+  .footer-bottom__inner{ flex-wrap:wrap; justify-content:center; text-align:center; }
+  .footer-bottom__inner p{ order:2; width:100%; }
+}

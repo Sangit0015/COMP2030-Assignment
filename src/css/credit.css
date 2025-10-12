@@ -1,0 +1,148 @@
+:root {
+  --blue: #00305A;
+  --yellow: #F4C542;
+  --bg: #0b0f14;
+  --text: #e8f0f7;
+  --muted: #bcd0e6;
+  --card: #101722;
+  --line: #1f2a37;
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+/* ---------- base reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  background: linear-gradient(180deg, #0b0f14, #0e141c);
+  color: var(--text);
+  font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* scrolling + visible overflow */
+  height: auto;
+  overflow-y: auto;
+}
+
+/* ---------- layout wrappers ---------- */
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.page {
+  padding: 24px 0 80px;
+}
+
+/* offset for fixed header */
+.header-spacer {
+  height: 120px;
+}
+
+/* ---------- page head ---------- */
+.page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.page-head h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--yellow);
+}
+
+.balance {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---------- card styles ---------- */
+.balance-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  min-width: 200px;
+  text-align: center;
+  transition: transform 0.15s ease-in-out;
+}
+
+.balance-card:hover {
+  transform: translateY(-4px);
+}
+
+.balance-card .num {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--yellow);
+}
+
+.balance-card .label {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .1s ease, box-shadow .1s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--yellow), #ffd666);
+  color: #111;
+  font-weight: 700;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+
+/* ---------- information section ---------- */
+section p {
+  color: #c9d7e6;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* ---------- footer adjustments ---------- */
+.footer-top,
+.footer-bottom {
+  position: static;
+  width: 100%;
+}
+
+.footer-top {
+  margin-top: 60px;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--line);
+  background: #0b0f14;
+  color: #9fb3c8;
+}
+
+.footer-bottom__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+}
+
+.footer-logo {
+  height: 26px;
+}

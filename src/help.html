@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help & Support • FUSS</title>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/help.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container-01">
+      <div class="left-section">
+        <img class="logoM" src="logo/logo.png" alt="FUSS Logo">
+      </div>
+      <div class="right-section">
+        <a href="hero_dash.html">
+          <button class="dashboard-button">
+            <img class="dashboard-icon" src="icons/dashboard.png" alt="">
+            <div class="tooltip">Dashboard</div>
+          </button>
+        </a>
+        <a href="skills.html" target="_blank">
+          <button class="skills-button">
+            <img class="skills-icon" src="icons/skills.png" alt="">
+            <div class="tooltip">My Skills</div>
+          </button>
+        </a>
+        <a href="credit.html" target="_blank">
+          <button class="credits-button">
+            <img class="credits-icon" src="icons/points.png" alt="">
+            <div class="tooltip">My Credits</div>
+          </button>
+        </a>
+        <a href="transactions.html" target="_blank">
+          <button class="transactions-button">
+            <img class="transactions-icon" src="icons/transactions.png" alt="">
+            <div class="tooltip">Transactions</div>
+          </button>
+        </a>
+        <a href="inbox.html" target="_blank">
+          <button class="inbox-button">
+            <img class="inbox-icon" src="icons/inbox.png" alt="">
+            <div class="tooltip">Inbox</div>
+          </button>
+        </a>
+        <a href="admin.html" target="_blank">
+          <button class="admin-button">
+            <img class="admin-icon" src="icons/admin.png" alt="">
+            <div class="tooltip">Admin</div>
+          </button>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="header-spacer"></div>
+
+  <!-- PAGE CONTENT -->
+  <div class="container page">
+    <div class="page-head">
+      <h1>Help & Support</h1>
+    </div>
+
+    <section id="support" class="help-card">
+      <form id="helpForm" class="help-form">
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic" required>
+          <option>General</option>
+          <option>Account</option>
+          <option>Skills & Listings</option>
+          <option>Credits & Transactions</option>
+          <option>Bug Report</option>
+          <option>Privacy/Safety</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Describe the issue or question" required></textarea>
+
+        <p class="note">We’ll reply to your uni email associated with your account.</p>
+
+        <button type="submit" class="send-btn">Send</button>
+        <p id="sent" class="sent hidden">✅ Thanks — your message was sent.</p>
+      </form>
+    </section>
+
+
+
+  <!-- FOOTER -->
+  <div class="footer-top">
+    <div class="footer-inner">
+      <div class="footer-col footer-links">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="hero_dash.html">Home</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="transactions.html">Transactions</a></li>
+          <li><a href="credit.html">Credits</a></li>
+          <li><a href="Profile.html">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-links">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="community.html">Community Guidelines</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: fuss.team@flinders.edu.au</p>
+        <p>Address: Flinders University, Bedford Park SA, Australia</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/flindersuniversity" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/Flinders" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/school/flinders-university/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/flindersuniversity/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom__inner">
+      <img src="logo/logo.png" class="footer-logo" alt="">
+      <span>© 2025 Flinders University Student System | All Rights Reserved</span>
+    </div>
+  </div>
+
+  <script src="js/help.js"></script>
+</body>
+</html>
