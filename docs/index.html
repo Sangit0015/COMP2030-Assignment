@@ -1,11 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; URL=hero_dash.html">
-  <title>Redirecting...</title>
-</head>
-<body>
-  <p>If you are not redirected automatically, <a href="hero_dash.html">click here</a>.</p>
-</body>
+<html lang = "en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="css/login.css">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+       <title>FUSS Login</title> 
+    </head>
+    <body>
+        <section class="hero">
+        <img class="hero-bg" src= "./image/imagewb1.jpg" alt="be fearless">
+
+        <a class="brand-crest-link" href="https://www.flinders.edu.au/ " aria-label="Flinders University">
+        <img class="flinders-lo" src="./logo/flinders-logo.png" alt="Flinders University">
+        </a>
+        <div class="login-sec">
+        
+        <div class="login-overlay">
+            <form action="">
+                <img class="FUSS-logo" src= "./logo/logo.png" alt="FUSS" >
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="register-link">
+                    <p>Don't you have an account? <a href="#" id="openRegister">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2 class="form-title">Register to the FUSS</h2>
+    <form action="#">
+          <div class="main-user-info">
+              <div class="user-input-box">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name" required>
+              </div>
+              <div class="user-input-box">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="username" placeholder="Enter Username" required>
+              </div>
+              <div class="user-input-box">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Enter Email" required>
+              </div>
+              <div class="user-input-box">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number" required>
+              </div>
+              <div class="user-input-box">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" placeholder="Enter Password" required>
+              </div>
+              <div class="user-input-box">
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+              </div>
+          </div>
+          <div class="gender-details-box">
+              <span class="gender-title">Gender</span>
+              <div class="gender-category" required>
+                  <input type="radio" name="gender" id="male">
+                  <label for="male">Male</label>
+                  <input type="radio" name="gender" id="female">
+                  <label for="female">Female</label>
+                  <input type="radio" name="gender" id="other">
+                  <label for="other">Other</label>
+              </div>
+        <div class="user-input-box" style="width:100%; margin-top:20px;">
+        <label for="role">Select Role</label>
+        <select id="role" name="role" required>
+          <option value="">-- Choose role --</option>
+          <option value="student">Student</option>
+          <option value="lecturer">Lecturer</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+          </div>
+          <div class="form-submit-btn">
+              <input type="submit" value="Register">
+          </div>
+      </form>
+  </div>
+</div>
+
+<script src="js/reg_form.js"></script>
+
+    </body>
 </html>
