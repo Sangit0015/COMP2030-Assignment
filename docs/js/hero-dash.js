@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", async () => {
   const currentPage = window.location.pathname.split("/").pop(); 
   document.querySelectorAll(".right-section a").forEach(link => {
@@ -22,6 +21,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const unskeleton = (el) => { if (!el) return; el.classList.remove("skeleton","skeleton-text"); };
 
+  let resolvedRole = "student";
+
   try {
     const res = await fetch("index.php?action=me", { credentials: 'same-origin' });
     if (!res.ok) throw new Error("User fetch failed: " + res.status);
@@ -39,90 +40,43 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     [els.name, els.fan, els.email, els.id].forEach(unskeleton);
 
-    const role = (user.role || (user.role_id === 1 ? 'admin' : user.role_id === 2 ? 'lecturer' : 'student')).toLowerCase();
-    const authorized = role === "admin" || role === "lecturer";
-
-    els.btnOthers.disabled = !authorized;
-    els.btnOthers.setAttribute("aria-disabled", String(!authorized));
-
-    els.btnOthers.addEventListener("click", (e) => {
-      if (els.btnOthers.disabled) {
-        e.preventDefault();
-        if (!els.tipAuth) return;
-        els.tipAuth.style.opacity = "1";
-        els.tipAuth.style.transform = "translateX(-50%) translateY(0)";
-        setTimeout(() => {
-          els.tipAuth.style.opacity = "0";
-          els.tipAuth.style.transform = "translateX(-50%) translateY(4px)";
-        }, 1600);
-      }
-    });
-
+    resolvedRole = (user.role || (user.role_id === 1 ? "admin" : user.role_id === 2 ? "lecturer" : "student")).toLowerCase();
   } catch (err) {
-    console.error(err);
+    console.warn("Running without backend; using DEV override. Reason:", err?.message || err);
     els.name.textContent = "Student";
     [els.name, els.fan, els.email, els.id].forEach(unskeleton);
   }
-});
 
+  // --- DEV override for testing without backend ---
+  const qsRole = new URLSearchParams(location.search).get("role");
+  const lsRole = localStorage.getItem("role");
+  if (qsRole) resolvedRole = qsRole.toLowerCase();
+  else if (lsRole) resolvedRole = lsRole.toLowerCase();
+  // -------------------------------------------------
 
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector("#split-section .slider");
-  if (!slider) return;
+  const authorized = resolvedRole === "admin" || resolvedRole === "lecturer";
 
-  const track = slider.querySelector(".slides");
-  const slides = Array.from(slider.querySelectorAll(".slide"));
-  const prev = slider.querySelector(".prev");
-  const next = slider.querySelector(".next");
-  const dotsWrap = slider.querySelector(".dots");
-
-  let i = 0;
-  const dots = slides.map((_, idx) => {
-    const b = document.createElement("button");
-    b.addEventListener("click", () => go(idx));
-    if (idx === 0) b.classList.add("active");
-    dotsWrap.appendChild(b);
-    return b;
-  });
-
-  function go(n){
-    i = (n + slides.length) % slides.length;
-    track.style.transform = `translateX(-${i * 100}%)`;
-    dots.forEach((d, k) => d.classList.toggle("active", k === i));
+  if (authorized) {
+    // enable the button and wire navigation
+    els.btnOthers.disabled = false;
+    els.btnOthers.setAttribute("aria-disabled", "false");
+    els.btnOthers.addEventListener("click", () => {
+      window.location.href = "http://127.0.0.1:5500/docs/admin.html#"; // your admin page
+    });
+    if (els.tipAuth) els.tipAuth.remove();
+  } else {
+    // keep disabled + tooltip
+    els.btnOthers.disabled = true;
+    els.btnOthers.setAttribute("aria-disabled", "true");
+    els.btnOthers.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (!els.tipAuth) return;
+      els.tipAuth.style.opacity = "1";
+      els.tipAuth.style.transform = "translateX(-50%) translateY(0)";
+      setTimeout(() => {
+        els.tipAuth.style.opacity = "0";
+        els.tipAuth.style.transform = "translateX(-50%) translateY(4px)";
+      }, 1600);
+    });
   }
-
-  prev.addEventListener("click", () => go(i - 1));
-  next.addEventListener("click", () => go(i + 1));
-  go(0);
-});
-
-
-const modal = document.getElementById('editProfileModal');
-const openBtn = document.getElementById('editProfileBtn');
-const closeEls = modal.querySelectorAll('[data-ep-close]');
-const avatarInput = document.getElementById('epAvatar');
-const avatarPreview = document.getElementById('epPreview');
-
-openBtn.addEventListener('click', () => modal.setAttribute('aria-hidden','false'));
-closeEls.forEach(el => el.addEventListener('click', () => modal.setAttribute('aria-hidden','true')));
-document.addEventListener('keydown', e => { if(e.key==='Escape') modal.setAttribute('aria-hidden','true') });
-
-avatarInput.addEventListener('change', e => {
-  const file = e.target.files[0];
-  if(file) {
-    const reader = new FileReader();
-    reader.onload = () => avatarPreview.src = reader.result;
-    reader.readAsDataURL(file);
-  }
-});
-
-document.getElementById('epForm').addEventListener('submit', e => {
-  e.preventDefault();
-  // update dashboard fields
-  document.getElementById('profilepic').src = avatarPreview.src;
-  document.getElementById('userName').textContent = document.getElementById('epDisplayName').value;
-  document.getElementById('studentEmail').textContent = document.getElementById('epEmail').value;
-  document.getElementById('studentId').textContent = document.getElementById('epStudentId').value;
-  document.getElementById('studentFan').textContent = document.getElementById('epFan').value;
-  modal.setAttribute('aria-hidden','true');
 });

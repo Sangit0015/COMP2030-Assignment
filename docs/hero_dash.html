@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
         <div class="container-01">
             
             <div class="left-section">
-              <a href="hero_dash.html">
+              <a href="">
                     <img class="logoM" src="./logo/logo.png" alt="FUSS Logo">
               </a>     
             </div>
@@ -49,12 +49,7 @@
                         <div class="tooltip">My credits</div>
                     </button>
                 </a>
-                <a href="admin.html" target="_blank">
-                    <button class="admin-button">
-                        <img class="admin-icon" src="icons/admin.png">
-                        <div class="tooltip">Admin</div>
-                        </button>
-                  </a>
+                
 
                 <a href="transactions.html" target="_blank">
                     <button class="transactions-button">
@@ -69,9 +64,19 @@
                         <div class="tooltip">Inbox</div>
                     </button>
                 </a>
+
+               <a href="Profile.html" id="accountTrigger">
+                   <button class="account-button">
+                    <img class="account-icon" src="icons/account.png" alt="Account">
+                    <div class="tooltip">Account</div>
+                   </button>
+               </a>
+
             </div>
         </div>
     </header>
+
+
 
 <section class="dash-front">
     <div class="dash-left">
@@ -93,7 +98,7 @@
 
   <div class="btn-wrapper">
     <button id="viewEditOthersBtn" class="btn" disabled aria-disabled="true" aria-describedby="authOnlyTip">
-      View &amp; Edit Others
+    Admin dashboard
     </button>
     <div id="authOnlyTip" class="btn-tooltip" role="tooltip">
       Only admins or lecturers can access this.
@@ -274,6 +279,6 @@
 
 
 <script src="js/hero-dash.js"></script>
-
+<script src="js/account.js"></script>
 </body>
 </html>

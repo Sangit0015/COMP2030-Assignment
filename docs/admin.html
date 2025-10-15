@@ -9,7 +9,7 @@
 
   <header>
     <div class="container-01">
-      <div class="left-section"><a href="hero_dash.html"><img class="logoM" src="./logo/logo.png" alt="FUSS Logo"></a></div>
+      <div class="left-section"><a href=""><img class="logoM" src="./logo/logo.png" alt="FUSS Logo"></a></div>
       <div class="right-section">
         <a href="hero_dash.html"><button class="dashboard-button"><img class="dashboard-icon" src="icons/dashboard.png"><div class="tooltip">Dashboard</div></button></a>
         <a href="skills.html"><button class="skills-button"><img class="skills-icon" src="icons/skills.png"><div class="tooltip">My Skills</div></button></a>
@@ -17,6 +17,12 @@
         <a href="credit.html"><button class="credits-button"><img class="credits-icon" src="icons/points.png"><div class="tooltip">My credits</div></button></a>
         <a href="transactions.html"><button class="transactions-button"><img class="transactions-icon" src="icons/transactions.png"><div class="tooltip">Credit transactions</div></button></a>
         <a href="inbox.html"><button class="inbox-button"><img class="inbox-icon" src="icons/inbox.png"><div class="tooltip">Inbox</div></button></a>
+          <a href="Profile.html" id="accountTrigger">
+                   <button class="account-button">
+                    <img class="account-icon" src="icons/account.png" alt="Account">
+                    <div class="tooltip">Account</div>
+                   </button>
+               </a>
       </div>
     </div>
   </header>
@@ -29,7 +35,7 @@
       <article class="card stat"><h2 id="rOpen">5</h2><p>Open Requests</p></article>
     </section>
     <section>
-      <h2>User Management</h2>
+      <h2 class="user_title">User Management</h2>
       <div class="table-wrap">
         <table id="userTable" class="table">
           <thead><tr><th>Name</th><th>Email</th><th>Credits</th><th>Actions</th></tr></thead>
@@ -39,6 +45,87 @@
     </section>
   </main>
 
+  
+<div class="searchbox-1">
+            <input id="fanSearch" type="text" placeholder="search student by FAN">
+            <button class="search-btn"><img class="search-button" src="icons/search.png"></button>
+            <a href="#">
+                
+            </a>           
+</div>
+
+  <section id="students">
+    <h2 class="MVIEW">Most Viewed Students</h2>
+    <div id="mostViewed" class="student-grid"></div>
+
+    <h2 class="MVIEW-1">History</h2>
+    <div id="history" class="student-grid"></div>
+
+    <div id="searchResult" class="student-grid"></div>
+  </section>
+
+
+<div id="editProfileModal" class="ep-modal" aria-hidden="true">
+  <div class="ep-class" data-ep-close></div>
+
+  <div class="ep-dialog" role="dialog" aria-modal="true" aria-labelledby="epTitle">
+    <button class="ep-close" type="button" title="Close" aria-label="Close" data-ep-close>&times;</button>
+
+    <h2 class="ep-name" id="epTitle">Edit Profile</h2>
+
+    <form id="epForm" autocomplete="off" novalidate>
+      <!-- Avatar changing-->
+      <div class="ep-avatar-row">
+        <img id="epPreview" src="icons/user-profile.png" alt="Profile preview">
+        <div class="ep-file">
+          <label for="epAvatar">Profile Picture</label>
+          <input type="file" id="epAvatar" accept="image/*">
+          <small>JPG/PNG up to ~2MB</small>
+        </div>
+      </div>
+
+      <!-- Names changing-->
+      <label class="ep-label" for="epFullName">Full Name</label>
+      <input class="ep-input" type="text" id="epFullName">
+
+      <label class="ep-label" for="epDisplayName">Display Name</label>
+      <input class="ep-input" type="text" id="epDisplayName">
+
+      <!-- Contact info ,,-->
+      <label class="ep-label" for="epEmail">Email</label>
+      <input class="ep-input" type="email" id="epEmail">
+
+      <!-- IDs ,,-->
+      <div class="ep-row">
+        <div class="ep-col">
+          <label class="ep-label" for="epStudentId">Student ID</label>
+          <input class="ep-input-1" type="text" id="epStudentId">
+        </div>
+        <div class="ep-col">
+          <label class="ep-label" for="epFan">FAN</label>
+          <input class="ep-input-1" type="text" id="epFan">
+        </div>
+      </div>
+
+      <!-- Address & Phone ,,-->
+      <label class="ep-label" for="epAddress">Address</label>
+      <input class="ep-input" type="text" id="epAddress">
+
+      <label class="ep-label" for="epPhone">Contact Number</label>
+      <input class="ep-input" type="tel" id="epPhone">
+
+      <div class="modal__actions">
+      <button id="suspend-btn" class="btn btn-outline-danger">Suspend</button>
+
+      <div class="spacer"></div>
+
+      <button id="edit-btn" class="btn btn-primary">Edit</button>
+    </div>
+    </form>
+  </div>
+</div>
+
+
 <footer id="site-footer">
 
 <div class="footer-top">
@@ -47,22 +134,22 @@
     <div class="footer-col footer-links">
       <h3>Explore</h3>
       <ul>
-        <li><a href="hero_dash.html">Home</a></li>
         <li><a href="skills.html">Skills</a></li>
         <li><a href="transactions.html">Transactions</a></li>
         <li><a href="credits.html">Credits</a></li>
         <li><a href="profile.html">Profile</a></li>
+        <li><a href="inbox.html">inbox</a></li>
       </ul>
     </div>
 
     <div class="footer-col footer-links">
       <h3>Resources</h3>
       <ul>
-        <li><a href="#">Help & Support</a></li>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Community Guidelines</a></li>
+     <li><a href="help.html">Help & Support</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="community.html">Community Guidelines</a></li>
       </ul>
     </div>
 
@@ -90,42 +177,10 @@
     </div>
   </div>
 </footer>
-  <div class="footer-top">
-    <div class="footer-inner">
-      <div class="footer-col footer-links">
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="hero_dash.html">Home</a></li>
-          <li><a href="inbox.html">inbox</a></li>
-          <li><a href="transactions.html">Transactions</a></li>
-          <li><a href="credit.html">Credits</a></li>
-          <li><a href="Profile.html">Profile</a></li>
-        </ul>
-      </div>
-      <div class="footer-col footer-links">
-        <h3>Resources</h3>
-        <ul>
-          <li><a href="help.html">Help & Support</a></li>
-          <li><a href="faq.html">FAQs</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Use</a></li>
-          <li><a href="community.html">Community Guidelines</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Contact Us</h3>
-        <p>Email: fuss.team@flinders.edu.au</p>
-        <p>Address: Flinders University, Bedford Park SA, Australia</p>
-        <div class="socials">
-          <a href="https://www.facebook.com/flindersuniversity" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://twitter.com/Flinders" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/school/flinders-university/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/flindersuniversity/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
+
+
+
+  
 
   <script src="js/admin.js"></script>
 </body>

@@ -1,16 +1,17 @@
 header {
-    background-color: #FFD700;
-    color: #F5F5F5;
-    padding: 20px 0;
-    position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    transition: top 0.3s ease; 
-    z-index: 1000; 
-    height: 120px;
+  background-color: #FFD700;
+  color: #F5F5F5;
+  padding: 20px 0;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  transition: top 0.3s ease; 
+  z-index: 1000; 
+  height: 120px;
 }
 
+/* Container */
 .container-01 {
   display: flex;
   justify-content: space-between; 
@@ -18,6 +19,7 @@ header {
   width: 100%;
 }
 
+/* Left */
 .left-section {
   display: flex;
   align-items: center;
@@ -28,28 +30,32 @@ header {
 }
 
 .logoM {
-    height: 70px;
-    margin-left: 80px;
+  height: 70px;
+  margin-left: 80px;
 }
 
+/* Right (single source of truth; removed duplicate block) */
 .right-section {
   margin-right: 80px;
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 70px; 
   justify-content: end;
   flex: 1;
   flex-direction: row;
 }
 
-/* Buttons */
+/* ===============================
+   Circular Buttons (shared)
+================================= */
 .dashboard-button,
 .skills-button,
 .activities-button,
 .credits-button,
 .transactions-button,
 .inbox-button,
-.admin-button {
+.admin-button,
+.account-button {                 /* <-- added account */
   height: 50px;
   width: 50px;
   border-radius: 25px;
@@ -64,27 +70,66 @@ header {
   flex-direction: row;
 }
 
-/* Icons */
+/* Optional: subtle hover feedback on the button itself */
+.dashboard-button:hover,
+.skills-button:hover,
+.activities-button:hover,
+.credits-button:hover,
+.transactions-button:hover,
+.inbox-button:hover,
+.admin-button:hover,
+.account-button:hover {
+  background-color: #f7c600;
+  transform: scale(1.05);
+}
+
+/* Icons (shared) */
 .dashboard-icon,
 .skills-icon,
 .activities-icon,
 .credits-icon,
 .transactions-icon,
 .inbox-icon,
-.admin-icon {
+.admin-icon,
+.account-icon {                   /* <-- added account */
   height: 45px;
   width: 45px;
   display: block;
+  transition: transform 0.5s ease;
 }
 
-/* Tooltips */
+/* Icon hover grow effect */
+.dashboard-button img,
+.skills-button img,
+.activities-button img,
+.credits-button img,
+.transactions-button img,
+.inbox-button img,
+.admin-button img,
+.account-button img {             /* <-- added account */
+  transition: transform 0.5s ease;
+}
+
+.dashboard-button:hover img,
+.skills-button:hover img,
+.activities-button:hover img,
+.credits-button:hover img,
+.transactions-button:hover img,
+.inbox-button:hover img,
+.admin-button:hover img,
+.account-button:hover img {       /* <-- added account */
+  transform: scale(1.3);
+}
+
+/* Tooltips (shared) */
 .dashboard-button .tooltip,
 .skills-button .tooltip,
 .activities-button .tooltip,
 .credits-button .tooltip,
 .transactions-button .tooltip,
 .inbox-button .tooltip,
-.admin-button .tooltip {
+.admin-button .tooltip,
+.account-button .tooltip {        /* <-- added account */
   position: absolute;
   background-color: rgba(2, 36, 60, 0.9);
   color: #F5F5F5;
@@ -104,51 +149,21 @@ header {
 .credits-button:hover .tooltip,
 .transactions-button:hover .tooltip,
 .inbox-button:hover .tooltip,
-.admin-button:hover .tooltip {
+.admin-button:hover .tooltip,
+.account-button:hover .tooltip {  /* <-- added account */
   opacity: 1;
 }
 
-
-.dashboard-button img,
-.skills-button img,
-.activities-button img,
-.credits-button img,
-.transactions-button img,
-.inbox-button img,
-.admin-button img {
-  transition: transform 0.5s ease;
-}
-
-.dashboard-button:hover img,
-.skills-button:hover img,
-.activities-button:hover img,
-.credits-button:hover img,
-.transactions-button:hover img,
-.inbox-button:hover img,
-.admin-button:hover img {
-  transform: scale(1.3);
-}
-
-
-.right-section {
-  margin-right: 80px;
-  display: flex;
-  align-items: center;
-  gap: 70px; 
-  justify-content: end;
-  flex: 1;
-  flex-direction: row;
-}
-
-/* Active underline */
+/* Active underline (shared) */
 .dashboard-button.active,
 .skills-button.active,
 .activities-button.active,
 .credits-button.active,
 .transactions-button.active,
 .inbox-button.active,
-.admin-button.active {
-    position: relative;
+.admin-button.active,
+.account-button.active {           /* <-- added account */
+  position: relative;
 }
 
 .dashboard-button.active::after, 
@@ -157,14 +172,15 @@ header {
 .credits-button.active::after,
 .transactions-button.active::after,
 .inbox-button.active::after,
-.admin-button.active::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 3px;
-    border-radius: 2px;
-    background-color: #02243C;
+.admin-button.active::after,
+.account-button.active::after {   /* <-- added account */
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #02243C;
 }

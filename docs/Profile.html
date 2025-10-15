@@ -19,27 +19,136 @@
         <a href="credit.html"><button class="credits-button"><img class="credits-icon" src="icons/points.png"><div class="tooltip">My credits</div></button></a>
         <a href="transactions.html"><button class="transactions-button"><img class="transactions-icon" src="icons/transactions.png"><div class="tooltip">Credit transactions</div></button></a>
         <a href="inbox.html"><button class="inbox-button"><img class="inbox-icon" src="icons/inbox.png"><div class="tooltip">Inbox</div></button></a>
+        <a href="Profile.html" id="accountTrigger">
+                   <button class="account-button">
+                    <img class="account-icon" src="icons/account.png" alt="Account">
+                    <div class="tooltip">Account</div>
+                   </button>
+               </a>
       </div>
     </div>
   </header>
+<div class="header-spacer"></div>
+<main class="page container"> 
+  <section class="page-head">
+    <h1>Your Profile</h1>
+    <div class="btn-row">
+      <button id="edit" class="btn">Edit</button>
+      <button id="save" class="btn primary hidden">Save</button>
+      <button id="cancel" class="btn hidden">Cancel</button>
+    </div>
+  </section>
 
-  <main class="page container">
-    <section class="page-head"><h1>Your Profile</h1><button id="edit" class="btn">Edit</button></section>
-    <section class="grid profile-grid">
-      <article class="card">
-        <h3>Details</h3>
-        <div class="row"><span class="label">Name</span><span id="pName">Hansith U.</span></div>
-        <div class="row"><span class="label">Course</span><span id="pCourse">Cybersecurity & Business</span></div>
-        <div class="row"><span class="label">Email</span><span id="pEmail">hansith@example.edu.au</span></div>
-      </article>
-      <article class="card">
-        <h3>Offered Skills</h3>
-        <ul id="pSkills" class="chips"></ul>
-        <button id="addSkill" class="btn primary">Add Skill</button>
-      </article>
-      <article class="card"><h3>About Me</h3><p id="pAbout">I like building front‑ends and helping friends debug JS.</p></article>
-    </section>
-  </main>
+  <section class="grid profile-grid">
+    <!-- Profile Photo -->
+<article class="card" id="card-photo">
+  <h3>Profile Photo</h3>
+
+  <div class="avatar">
+    <img id="pAvatar" alt="Profile photo" />
+    <div class="hint">PNG/JPG up to ~2MB</div>
+  </div>
+
+  <div class="btn-row">
+    <button id="changePhoto" class="btn primary">Change Photo</button>
+    <button id="removePhoto" class="btn secondary">Remove</button>
+  </div>
+
+  <!-- hidden file input -->
+  <input id="avatarInput" type="file" accept="image/*" class="hidden" />
+</article>
+
+    <!-- Details -->
+    <article class="card" id="card-details">
+      <h3>Details</h3>
+      <div class="row">
+        <span class="label">Name</span>
+        <span id="pName" data-field="name" class="v">Hansith U.</span>
+        <input id="iName" class="i hidden" type="text" />
+      </div>
+      <div class="row">
+        <span class="label">Course</span>
+        <span id="pCourse" data-field="course" class="v">Cybersecurity & Business</span>
+        <input id="iCourse" class="i hidden" type="text" />
+      </div>
+      <div class="row">
+        <span class="label">Email</span>
+        <span id="pEmail" data-field="email" class="v">hansith@example.edu.au</span>
+        <input id="iEmail" class="i hidden" type="email" />
+      </div>
+    </article>
+
+    <!-- Skills -->
+    <article class="card" id="card-skills">
+      <h3>Offered Skills</h3>
+      <ul id="pSkills" class="chips"></ul>
+      <div class="edit-inline hidden" id="skillsEditor">
+        <input id="newSkill" class="i" type="text" placeholder="Add a skill…">
+        <button id="addSkill" class="btn small primary">Add</button>
+      </div>
+    </article>
+
+    <!-- About -->
+    <article class="card" id="card-about">
+      <h3>About Me</h3>
+      <p id="pAbout" data-field="about" class="v">I like building front-ends and helping friends debug JS.</p>
+      <textarea id="iAbout" class="i hidden" rows="4"></textarea>
+    </article>
+
+    <!-- Ratings -->
+    <article class="card" id="card-ratings">
+      <h3>Skill & Trust Ratings</h3>
+      <div class="ratings">
+        <div class="rating-row">
+          <span>Skill Proficiency</span>
+          <div class="stars" data-key="rating_skill" aria-label="Skill Proficiency">
+            <button data-value="1">★</button>
+            <button data-value="2">★</button>
+            <button data-value="3">★</button>
+            <button data-value="4">★</button>
+            <button data-value="5">★</button>
+          </div>
+          <span class="score" data-key="rating_skill_score">4.0</span>
+        </div>
+
+        <div class="rating-row">
+          <span>Helpfulness</span>
+          <div class="stars" data-key="rating_help">
+            <button data-value="1">★</button><button data-value="2">★</button>
+            <button data-value="3">★</button><button data-value="4">★</button>
+            <button data-value="5">★</button>
+          </div>
+          <span class="score" data-key="rating_help_score">4.0</span>
+        </div>
+
+        <div class="rating-row">
+          <span>Trustworthiness</span>
+          <div class="stars" data-key="rating_trust">
+            <button data-value="1">★</button><button data-value="2">★</button>
+            <button data-value="3">★</button><button data-value="4">★</button>
+            <button data-value="5">★</button>
+          </div>
+          <span class="score" data-key="rating_trust_score">4.0</span>
+        </div>
+
+        <div class="rating-row">
+          <span>Communication</span>
+          <div class="stars" data-key="rating_comm">
+            <button data-value="1">★</button><button data-value="2">★</button>
+            <button data-value="3">★</button><button data-value="4">★</button>
+            <button data-value="5">★</button>
+          </div>
+          <span class="score" data-key="rating_comm_score">4.0</span>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="logout-section">
+  <button id="logoutBtn" class="btn logout-btn">Log Out</button>
+</section>
+
+</main>
+
 
   <!-- FOOTER -->
     <div class="footer-top">
@@ -77,6 +186,12 @@
     </div>
   </div>
   <div class="footer-bottom">
+    <div class="footer-bottom__inner">
+      <img src="./logo/flinderuni_main_logo.png" alt="Company Logo" class="footer-logo">
+      <p>© 2025 Flinders University Student System | All Rights Reserved</p>
+      <img src="./logo/logo.png" alt="FUSS Logo" class="footer-logo">
+    </div>
+  </div>
   <script src="js/profile.js"></script>
 </body>
 </html>
