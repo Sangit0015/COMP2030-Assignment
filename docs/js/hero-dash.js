@@ -23,22 +23,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   const unskeleton = (el) => { if (!el) return; el.classList.remove("skeleton","skeleton-text"); };
 
   try {
-    const res = await fetch("user.json");
+    const res = await fetch("index.php?action=me", { credentials: 'same-origin' });
     if (!res.ok) throw new Error("User fetch failed: " + res.status);
-    const user = await res.json();
+    const payload = await res.json();
+    const user = payload.user || {};
 
-    els.name.textContent  = user.fullName || "Student";
-    els.fan.textContent   = user.fan || "—";
+    els.name.textContent  = user.display_name || user.username || "Student";
+    els.fan.textContent   = user.username || "—";
     els.email.textContent = user.email || "—";
-    els.id.textContent    = user.studentId || "—";
+    els.id.textContent    = user.id || "—";
 
     if (user.avatarUrl) {
       els.img.src = user.avatarUrl;
-      els.img.alt = (user.fullName || "Student") + " profile picture";
+      els.img.alt = (user.display_name || user.username || "Student") + " profile picture";
     }
     [els.name, els.fan, els.email, els.id].forEach(unskeleton);
 
-    const role = (user.role || "").toLowerCase();
+    const role = (user.role || (user.role_id === 1 ? 'admin' : user.role_id === 2 ? 'lecturer' : 'student')).toLowerCase();
     const authorized = role === "admin" || role === "lecturer";
 
     els.btnOthers.disabled = !authorized;
