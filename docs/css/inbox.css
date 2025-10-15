@@ -10,7 +10,6 @@
   --shadow: 0 8px 24px rgba(0, 0, 0, .35);
 }
 
-/* ---------- base reset ---------- */
 * { box-sizing: border-box; }
 
 html, body {
@@ -22,14 +21,14 @@ html, body {
   overflow-y: auto;
 }
 
-/* ---------- layout wrappers ---------- */
+
 .container { width: min(1100px, 92%); margin-inline: auto; }
 .page { padding: 24px 0 80px; }
 
 /* header offset */
 .header-spacer { height: 120px; }
 
-/* ---------- page head ---------- */
+
 .page-head {
   display: flex; align-items: center; justify-content: space-between;
   gap: 12px; flex-wrap: wrap;
@@ -39,7 +38,7 @@ html, body {
   padding: 10px 12px; border-radius: 12px; width: 260px;
 }
 
-/* ---------- messages grid ---------- */
+
 .grid { display: grid; gap: 12px; margin-top: 14px; }
 
 .msg {
@@ -57,6 +56,178 @@ html, body {
 .msg-from { font-weight: 700; color: var(--text); }
 .msg-date { color: var(--muted); font-size: 13px; }
 .msg-body { color: #c9d7e6; }
+.message-card {
+  background: #0f1c2e; /* deep navy tone */
+  border: 1px solid #FFD700; /* Flinders gold border */
+  border-radius: 12px;
+  padding: 14px;
+  display: grid;
+  gap: 6px;
+  color: #f5f5f5;
+}
+
+.message-card .meta {
+  display: flex;
+  gap: 14px;
+  font-size: 0.85rem;
+  color: #c6c6c6;
+}
+
+.message-card .subject {
+  font-weight: 700;
+  color: #FFD700;
+}
+
+.message-card .snippet {
+  color: #f5f5f5;
+}
+
+/* Tabs */
+.hidden { display: none; }
+
+.composer {
+  margin-top: 18px;
+  background: #0f1c2e; /* deep navy background */
+  border: 1px solid #FFD700; /* gold border */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  max-width: 720px;
+  color: #f5f5f5;
+}
+
+.composer h2 {
+  margin-bottom: 15px;
+  color: #FFD700; /* gold title */
+  font-weight: 700;
+}
+
+.form-row {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  font-weight: 600;
+  color: #FFD700;
+}
+
+.form-row input,
+.form-row textarea {
+  border: 1px solid #FFD700;
+  background: #02243C;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #FFE66D; /* soft highlight gold */
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+}
+
+/* Button container */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.actions button {
+  border: 1px solid #FFD700;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+/* Save Draft */
+#saveDraftBtn {
+  background: #02243C;
+  color: #FFD700;
+}
+#saveDraftBtn:hover {
+  background: #1a2e45;
+}
+
+/* Send */
+#sendBtn {
+  background: #FFD700;
+  color: #02243C;
+}
+#sendBtn:hover {
+  background: #e6c200;
+}
+
+/* Close */
+#closeCompose {
+  background: transparent;
+  color: #FFD700;
+}
+#closeCompose:hover {
+  background: #1a2e45;
+}
+
+/* Error message */
+.form-error {
+  color: #ff6b6b;
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+/*tabs*/
+.tabs{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:12px 0;
+}
+
+/* reset native look */
+.tabs button{
+  appearance:none; -webkit-appearance:none;
+  font: inherit; font-weight:600;
+  padding:8px 14px;
+  border-radius: var(--radius);
+  border:1px solid var(--yellow);
+  background: var(--card);
+  color: var(--yellow);
+  cursor:pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  box-shadow:none;
+}
+
+
+.tabs .tab.active{
+  background: var(--yellow);
+  color: var(--blue);
+  border-color: var(--yellow);
+}
+
+
+.tabs .tab:hover:not(.active){
+  background: #122032;        
+  color: var(--yellow);
+}
+
+
+.tabs .compose-open{
+  margin-left:auto;
+  background: var(--yellow);
+  color: var(--blue);
+  border-color: var(--yellow);
+  font-weight:700;
+}
+.tabs .compose-open:hover{
+  background:#e6bb32;        
+}
+
+
+.tabs button:focus{
+  outline:2px soli
+}
 
 /* ---------- footer ---------- */
 .footer-top, .footer-bottom { position: static; width: 100%; }
