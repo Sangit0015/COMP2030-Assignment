@@ -15,7 +15,7 @@
       <div class="right-section">
         <a href="hero_dash.html"><button class="dashboard-button"><img class="dashboard-icon" src="icons/dashboard.png"><div class="tooltip">Dashboard</div></button></a>
         <a href="skills.html"><button class="skills-button"><img class="skills-icon" src="icons/skills.png"><div class="tooltip">My Skills</div></button></a>
-        <a href=""><button class="activities-button"><img class="activities-icon" src="icons/activities.png"><div class="tooltip">Recent Activities</div></button></a>
+        
         <a href="credit.html"><button class="credits-button active"><img class="credits-icon" src="icons/points.png"><div class="tooltip">My credits</div></button></a>
         <a href="transactions.html"><button class="transactions-button"><img class="transactions-icon" src="icons/transactions.png"><div class="tooltip">Credit transactions</div></button></a>
         <a href="inbox.html"><button class="inbox-button"><img class="inbox-icon" src="icons/inbox.png"><div class="tooltip">Inbox</div></button></a>
@@ -38,13 +38,16 @@
           <div class="num" id="creditVal">12</div>
           <div class="label">Available Credits</div>
         </div>
-        <button id="earnOne" class="btn primary">Earn +1</button>
-        <button id="redeemOne" class="btn">Redeem -1</button>
       </div>
     </section>
     <section>
-      <h2>How it works</h2>
-      <p>Provide help to earn credits. Spend credits to request help from peers. Admins can adjust balances for verified contributions.</p>
+      <h2>Recent Transactions</h2>
+      <div id="txList" class="tx-list" aria-live="polite">
+        <div class="tx-row"><span class="date">2025-09-30</span><span class="type received">Received</span><span class="desc">From Alice · Tutoring JS</span><span class="amt plus">+5</span></div>
+        <div class="tx-row"><span class="date">2025-09-25</span><span class="type sent">Sent</span><span class="desc">To Bob · Design help</span><span class="amt minus">-3</span></div>
+        <div class="tx-row"><span class="date">2025-09-20</span><span class="type received">Received</span><span class="desc">From Carol · Python basics</span><span class="amt plus">+8</span></div>
+        <div class="tx-row"><span class="date">2025-09-15</span><span class="type sent">Sent</span><span class="desc">To Dave · Logo review</span><span class="amt minus">-2</span></div>
+      </div>
     </section>
   </main>
 
@@ -91,6 +94,6 @@
     </div>
   <div class="footer-bottom">
  
-  <script src="js/credits.js"></script>
+  
 </body>
 </html>

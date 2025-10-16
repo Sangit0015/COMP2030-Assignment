@@ -146,3 +146,30 @@ section p {
 .footer-logo {
   height: 26px;
 }
+
+/* ---------- recent transactions list (credits page) ---------- */
+#txList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#txList .tx-row {
+  display: grid;
+  grid-template-columns: 120px 100px 1fr 80px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+#txList .date { color: var(--muted); }
+#txList .type { font-weight: 600; }
+#txList .type.received { color: #6dd17c; }
+#txList .type.sent { color: #ff8b7b; }
+#txList .amt { font-weight: 700; text-align: right; }
+#txList .amt.plus { color: #7fe38e; }
+#txList .amt.minus { color: #ffa096; }

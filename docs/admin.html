@@ -1,4 +1,7 @@
+<!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FUSS • Admin</title>
   <link rel="stylesheet" href="css/header.css" />
@@ -30,9 +33,8 @@
   <main class="page container">
     <section class="page-head"><h1>Admin Dashboard</h1><div class="actions"><button id="addUser" class="btn primary">Add User</button><button id="export" class="btn">Export CSV</button></div></section>
     <section class="grid stats">
-      <article class="card stat"><h2 id="uTotal">24</h2><p>Total Users</p></article>
-      <article class="card stat"><h2 id="sTotal">48</h2><p>Skills Listed</p></article>
-      <article class="card stat"><h2 id="rOpen">5</h2><p>Open Requests</p></article>
+      <article class="card stat"><h2 id="uTotal">0</h2><p>Total Users</p></article>
+      <article class="card stat"><h2 id="sTotal">0</h2><p>Skills Listed</p></article>
     </section>
     <section>
       <h2 class="user_title">User Management</h2>
@@ -47,7 +49,7 @@
 
   
 <div class="searchbox-1">
-            <input id="fanSearch" type="text" placeholder="search student by FAN">
+            <input id="fanSearch" type="text" placeholder="Search by username, display name or email">
             <button class="search-btn"><img class="search-button" src="icons/search.png"></button>
             <a href="#">
                 
@@ -95,6 +97,9 @@
       <label class="ep-label" for="epEmail">Email</label>
       <input class="ep-input" type="email" id="epEmail">
 
+      <label class="ep-label" for="epCredits">Credits</label>
+      <input class="ep-input" type="number" id="epCredits" min="0" step="1">
+
       <!-- IDs ,,-->
       <div class="ep-row">
         <div class="ep-col">
@@ -113,6 +118,9 @@
 
       <label class="ep-label" for="epPhone">Contact Number</label>
       <input class="ep-input" type="tel" id="epPhone">
+
+      <label class="ep-label" for="epBio">Bio</label>
+      <textarea class="ep-input" id="epBio" rows="3" placeholder="Short bio"></textarea>
 
       <div class="modal__actions">
       <button id="suspend-btn" class="btn btn-outline-danger">Suspend</button>
