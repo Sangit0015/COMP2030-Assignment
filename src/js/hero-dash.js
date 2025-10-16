@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       const btn = link.querySelector("button");
       if (btn) btn.classList.add("active");
     }
+
+  if (els.btnEdit) {
+    els.btnEdit.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "Profile.html";
+    });
+  }
   });
 
   const els = {
@@ -47,25 +54,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     [els.name, els.fan, els.email, els.id].forEach(unskeleton);
   }
 
-  // --- DEV override for testing without backend ---
   const qsRole = new URLSearchParams(location.search).get("role");
   const lsRole = localStorage.getItem("role");
   if (qsRole) resolvedRole = qsRole.toLowerCase();
   else if (lsRole) resolvedRole = lsRole.toLowerCase();
-  // -------------------------------------------------
 
   const authorized = resolvedRole === "admin" || resolvedRole === "lecturer";
 
   if (authorized) {
-    // enable the button and wire navigation
     els.btnOthers.disabled = false;
     els.btnOthers.setAttribute("aria-disabled", "false");
     els.btnOthers.addEventListener("click", () => {
-      window.location.href = "http://127.0.0.1:5500/docs/admin.html#"; // your admin page
+      window.location.href = "admin.html";
     });
     if (els.tipAuth) els.tipAuth.remove();
   } else {
-    // keep disabled + tooltip
     els.btnOthers.disabled = true;
     els.btnOthers.setAttribute("aria-disabled", "true");
     els.btnOthers.addEventListener("click", (e) => {

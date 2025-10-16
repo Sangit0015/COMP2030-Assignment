@@ -1,6 +1,26 @@
-// FUSS Profile Script (inline editable + persistent)
 const Chips = ['Python', 'HTML/CSS', 'Poster Design'];
 const STORAGE_KEY = "fuss_profile_v1";
+
+async function api(path, body) {
+  const res = await fetch(`index.php?action=${path}` + (body && Object.keys(body).length && !('method' in body) ? '' : ''), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || data.error) throw new Error(data.error || `Request failed: ${res.status}`);
+  return data;
+}
+async function apiGet(path, params) {
+  const usp = new URLSearchParams(params || {});
+  const url = `index.php?action=${encodeURIComponent(path)}&${usp.toString()}`;
+  const r = await fetch(url, { credentials: 'same-origin' });
+  const text = await r.text();
+  let data; try { data = JSON.parse(text); } catch { throw new Error('Invalid server response'); }
+  if (!r.ok || data.error) throw new Error(data.error || `Request failed: ${r.status}`);
+  return data;
+}
 
 // Elements
 const ul = document.getElementById('pSkills');
@@ -39,11 +59,19 @@ function paint() {
 }
 
 // Add a new skill
-function addSkill(label) {
+async function addSkill(label) {
   if (!label) return;
+  try {
+    await api('skill_create', { title: label, category: '', description: '' });
+  } catch (e) {
+    // Fallback to local only if API fails
+    Chips.push(label);
+    paint();
+    saveData();
+    return;
+  }
   Chips.push(label);
   paint();
-  saveData();
 }
 
 // Toggle editable fields
@@ -94,22 +122,73 @@ function saveData() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
-function loadData() {
-  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-  if (data.name) nameEl.textContent = data.name;
-  if (data.course) courseEl.textContent = data.course;
-  if (data.email) emailEl.textContent = data.email;
-  if (data.about) aboutEl.textContent = data.about;
-  if (Array.isArray(data.skills) && data.skills.length) {
-    Chips.splice(0, Chips.length, ...data.skills);
+async function loadData() {
+  try {
+    const me = await apiGet('me');
+    if (!me || !me.user || !me.user.id) throw new Error('Not logged in');
+    const resp = await apiGet('profile_get');
+    const u = resp.user || {}; const p = resp.profile || {}; const r = resp.ratings || {};
+    nameEl.textContent = (u.display_name || u.username || nameEl.textContent).trim();
+    emailEl.textContent = (u.email || emailEl.textContent).trim();
+    courseEl.textContent = (p.course || '').trim();
+    aboutEl.textContent = (p.about || '').trim();
+    // Skills
+    const skills = Array.isArray(p.skills) ? p.skills : [];
+    if (skills.length) {
+      Chips.splice(0, Chips.length, ...skills);
+    }
+    paint();
+    const avg = r.average || {};
+    const map = [
+      ['rating_skill','rating_skill_score'],
+      ['rating_help','rating_help_score'],
+      ['rating_trust','rating_trust_score'],
+      ['rating_comm','rating_comm_score']
+    ];
+    for (const [k, scoreKey] of map) {
+      const val = avg[k];
+      const el = document.querySelector(`.score[data-key="${scoreKey}"]`);
+      if (el) el.textContent = (val!=null) ? (Math.round(val*10)/10).toFixed(1) : '—';
+      const starsWrap = document.querySelector(`.stars[data-key="${k}"]`);
+      if (starsWrap) {
+        const buttons = Array.from(starsWrap.querySelectorAll('button'));
+        const active = Math.round((val||0));
+        buttons.forEach((b,idx)=>{
+          b.setAttribute('aria-pressed', idx < active ? 'true':'false');
+        });
+      }
+    }
+    // Disable rating on own profile
+    const isSelf = true;
+    if (isSelf) {
+      document.querySelectorAll('.stars button').forEach(b=>{ b.disabled = true; b.title = 'You cannot rate yourself'; });
+    }
+  } catch (e) {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    if (data.name) nameEl.textContent = data.name;
+    if (data.course) courseEl.textContent = data.course;
+    if (data.email) emailEl.textContent = data.email;
+    if (data.about) aboutEl.textContent = data.about;
+    if (Array.isArray(data.skills) && data.skills.length) {
+      Chips.splice(0, Chips.length, ...data.skills);
+    }
+    paint();
   }
-  paint();
 }
 
 // Handle button actions
 editBtn.addEventListener('click', () => setEditable(true));
-saveBtn.addEventListener('click', () => {
+saveBtn.addEventListener('click', async () => {
   setEditable(false);
+  const payload = {
+    display_name: nameEl.textContent.trim(),
+    course: courseEl.textContent.trim(),
+    about: aboutEl.textContent.trim(),
+  };
+  try {
+    await api('profile_update', payload);
+  } catch (e) {st
+  }
   saveData();
 });
 cancelBtn.addEventListener('click', () => {
@@ -117,7 +196,6 @@ cancelBtn.addEventListener('click', () => {
   loadData();
 });
 
-// Remove skill when clicking ✕
 ul.addEventListener('click', e => {
   if (e.target.classList.contains('del')) {
     const li = e.target.closest('li');
@@ -172,7 +250,6 @@ ul.addEventListener('click', e => {
     img.src = dataUrl;
   }
 
-  // Change photo -> open file picker
   change.addEventListener("click", () => fileIn.click());
 
   // When file chosen, read and save
@@ -207,11 +284,9 @@ ul.addEventListener('click', e => {
   });
   if (nameEl) nameObserver.observe(nameEl, { childList: true, characterData: true, subtree: true });
 
-  // Init
   loadAvatar();
 })();
 document.getElementById("logoutBtn").addEventListener("click", () => {
-  // Create custom popup
   const overlay = document.createElement("div");
   overlay.style.position = "fixed";
   overlay.style.top = 0;
@@ -244,11 +319,10 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
   // Button logic
   document.getElementById("cancelLogout").addEventListener("click", () => overlay.remove());
   document.getElementById("confirmLogout").addEventListener("click", () => {
-    // Clear saved data (optional)
     localStorage.clear();
     overlay.remove();
     // Redirect to landing or login page
-    window.location.href = "index.html"; // change if your login page has another name
+    window.location.href = "index.html";
   });
 });
 

@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FUSS • Inbox</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/inbox.css" />
+</head>
+<body>
   <!-- HEADER -->
   <header>
     <div class="container-01">
@@ -5,7 +16,6 @@
       <div class="right-section">
         <a href="hero_dash.html"><button class="dashboard-button"><img class="dashboard-icon" src="icons/dashboard.png"><div class="tooltip">Dashboard</div></button></a>
         <a href="skills.html"><button class="skills-button"><img class="skills-icon" src="icons/skills.png"><div class="tooltip">My Skills</div></button></a>
-        <a href=""><button class="activities-button"><img class="activities-icon" src="icons/activities.png"><div class="tooltip">Recent Activities</div></button></a>
         <a href="credit.html"><button class="credits-button"><img class="credits-icon" src="icons/points.png"><div class="tooltip">My credits</div></button></a>
         <a href="transactions.html"><button class="transactions-button"><img class="transactions-icon" src="icons/transactions.png"><div class="tooltip">Credit transactions</div></button></a>
         <a href="inbox.html"><button class="inbox-button active"><img class="inbox-icon" src="icons/inbox.png"><div class="tooltip">Inbox</div></button></a>
@@ -35,7 +45,6 @@
     <nav class="tabs" role="tablist" aria-label="Mailbox folders">
       <button class="tab active" data-tab="inbox" role="tab" aria-selected="true">Inbox</button>
       <button class="tab" data-tab="sent" role="tab" aria-selected="false">Sent</button>
-      <button class="tab" data-tab="drafts" role="tab" aria-selected="false">Drafts</button>
       <button class="compose-open" id="openCompose">+ Compose</button>
     </nav>
   </div>
@@ -43,47 +52,26 @@
   <!-- Messages list (renders cards here) -->
   <section id="messages" class="grid" aria-live="polite"></section>
 
-  <!-- Compose / Send -->
-  <section id="composer" class="composer hidden" aria-labelledby="composeTitle">
-    <h2 id="composeTitle">New Message</h2>
-    <form id="messageForm" novalidate>
-      <div class="form-row">
-        <label for="toUser">To</label>
-        <input type="text" id="toUser" name="toUser" placeholder="Recipient username" required />
+  <!-- Messenger-style thread panel -->
+  <section id="thread" class="hidden" aria-live="polite">
+    <div class="thread-head" style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0;">
+      <div>
+        <h2 id="threadTitle" style="margin:0;font-size:18px;">Conversation</h2>
+        <small id="threadSub" style="opacity:.7;"></small>
       </div>
-
-      <div class="form-row">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" placeholder="Subject" required />
+      <div style="display:flex;gap:8px;">
+        <button id="threadBack" class="btn secondary" type="button">Back</button>
       </div>
-
-      <div class="form-row">
-        <label for="body">Message</label>
-        <textarea id="body" name="body" placeholder="Type your message..." rows="6" required></textarea>
-      </div>
-
-      <div class="actions">
-        <button type="button" id="saveDraftBtn">Save Draft</button>
-        <button type="submit" id="sendBtn">Send</button>
-        <button type="button" id="closeCompose">Close</button>
-      </div>
-
-      <p id="formError" class="form-error" role="alert" aria-live="assertive"></p>
-    </form>
+    </div>
+    <div id="threadMsgs" style="display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:12px;padding:12px;max-height:50vh;overflow:auto;background:#0f151e;"></div>
+    <div class="thread-input" style="display:flex;gap:8px;margin-top:10px;">
+      <input id="threadInput" class="input" type="text" placeholder="Type a message..." style="flex:1;" />
+      <button id="threadSend" class="btn primary" type="button">Send</button>
+    </div>
+    <p id="threadErr" class="form-error" role="alert" aria-live="assertive"></p>
   </section>
 
 </main>
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FUSS • Inbox</title>
-  <link rel="stylesheet" href="css/header.css" />
-  <link rel="stylesheet" href="css/footer.css" />
-  <link rel="stylesheet" href="css/inbox.css" />
-</head>
-<body>
   <div class="footer-top">
     <div class="footer-inner">
       <div class="footer-col footer-links">
@@ -99,7 +87,7 @@
       <div class="footer-col footer-links">
         <h3>Resources</h3>
         <ul>
-       <li><a href="help.html">Help & Support</a></li>
+          <li><a href="help.html">Help & Support</a></li>
           <li><a href="faq.html">FAQs</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Use</a></li>
@@ -123,15 +111,10 @@
   <div class="footer-bottom">
     <div class="footer-bottom__inner">
       <img src="./logo/flinderuni_main_logo.png" alt="Company Logo" class="footer-logo">
-      <p>© 2025 Flinders University Student System | All Rights Reserved</p>
+      <p> 2025 Flinders University Student System | All Rights Reserved</p>
       <img src="./logo/logo.png" alt="FUSS Logo" class="footer-logo">
     </div>
   </div>
-  <div class="footer-bottom">
   <script src="js/inbox.js"></script>
 </body>
 </html>
-
-  <!-- FOOTER -->
- 
-
