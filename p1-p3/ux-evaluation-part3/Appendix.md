@@ -161,7 +161,6 @@ All images are stored in `/p1-p3/ux-evaluation-part3/images/` within the GitHub 
 > Participants universally expected this functionality to exist, identifying it as a major missing feature.
 
 ---
-
 All screenshots were verified by the observer and retained in the team’s internal evidence folder for marking and audit purposes.
 
 
