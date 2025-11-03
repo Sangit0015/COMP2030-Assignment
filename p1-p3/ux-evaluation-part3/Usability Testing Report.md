@@ -4,6 +4,7 @@ Usability testing of the FUSS platform was conducted to determine the efficacy o
 
 Three participants took part in the testing, all undergraduate IT students familiar with basic web applications. Each participant was asked to perform the six planned tasks using a live version of the system connected to the project database. The think-aloud protocol was applied throughout, with the researcher recording verbal comments, timing each task, and noting visible errors. A short post-test questionnaire collected SEQ ratings for each task and a final SUS score to gauge overall usability.
 
+
 Each session lasted approximately twenty-five minutes. The participants were informed about the purpose of the research study, gave consent, completed the set of tasks in the sequence below, answered the questionnaire, and took a brief interview. Sessions were observed personally, and screen recordings were made for purposes of confirmation of length and time, and quantitative data on completion rate and time on task were merged with qualitative comments.
 
 The overall completion rate across all tasks was eighty-eight percent and had on average a SUS score of seventy-seven. These figures indicate good usability, yet several recurring interface problems are illustrated that limited efficiency.
