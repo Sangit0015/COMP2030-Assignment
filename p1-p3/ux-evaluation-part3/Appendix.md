@@ -120,54 +120,49 @@ All images are stored in `/p1-p3/ux-evaluation-part3/images/` within the GitHub 
 ---
 
 ### 1. Login Page – Raw JSON Error
-![Login Page – Raw JSON Error](./ux-evaluation-part3/images/login%20page.png)
+![Login Page – Raw JSON Error](./images/login%20page.png)
 > The login screen displayed a raw backend JSON message (`{"error": "Invalid credentials"}`) instead of a clear user-facing alert.  
 > This caused confusion among participants, who believed the system had failed.
 
 ---
 
 ### 2. Profile Page – No Confirmation Message
-![Profile Page – No Confirmation](./ux-evaluation-part3/images/profile%20page.png)
+![Profile Page – No Confirmation](./images/profile%20page.png)
 > After pressing **Save**, no success or confirmation message appeared.  
 > Participants refreshed the page repeatedly to check whether their updates had saved successfully.
 
 ---
 
 ### 3. Skills Page – Navigation Layout Issue
-![Skills Page – Navigation Problem](./ux-evaluation-part3/images/skills%20page.png)
+![Skills Page – Navigation Problem](./images/skills%20page.png)
 > The “Add Skill” section was difficult to locate.  
 > Participants reported that the layout lacked visual hierarchy and clear navigation cues.
 
 ---
 
 ### 4. Messaging Interface – Reversed Message Order
-![Messaging Interface – Message Order Issue](./ux-evaluation-part3/images/messaging%20interface.png)
+![Messaging Interface – Message Order Issue](./images/messaging%20interface.png)
 > Messages appeared in inconsistent order, with some older messages shown above newer ones.  
 > This reduced readability and led to confusion during message exchanges.
 
 ---
 
 ### 5. Credits Page – Raw JSON Transactions
-![Credits Page – Raw JSON Display](./ux-evaluation-part3/images/credits%20page.png)
+![Credits Page – Raw JSON Display](./images/credits%20page.png)
 > The credit and transaction data were presented as raw JSON text rather than a formatted, user-readable table.  
 > Participants found it difficult to interpret, confirming the need for structured data display.
 
 ---
 
 ### 6. Dashboard – Missing Credit-Request Feature
-![Dashboard – Missing Credit Request](./ux-evaluation-part3/images/profile%20page.png)
+![Dashboard – Missing Credit Request](./images/profile%20page.png)
 > The main dashboard contained other navigation options (Messages, Skills, Credits)  
 > but no visible **“Request Credits”** button.  
 > Participants universally expected this functionality to exist, identifying it as a major missing feature.
 
 ---
-All screenshots were verified by the observer and retained in the team’s internal evidence folder for marking and audit purposes.
-
-
----
 
 All screenshots were verified by the observer and retained in the team’s internal evidence folder for marking and audit purposes.
-
 
 ---
 
