@@ -127,35 +127,35 @@ All images are stored in `/p1-p3/ux-evaluation-part3/images/` within the GitHub 
 ---
 
 ### 2. Profile Page – No Confirmation Message
-![Profile Page – No Confirmation](./images/profile%20page.png)
+![Profile Page – No Confirmation](./images/Profile%20page.png)
 > After pressing **Save**, no success or confirmation message appeared.  
 > Participants refreshed the page repeatedly to check whether their updates had saved successfully.
 
 ---
 
 ### 3. Skills Page – Navigation Layout Issue
-![Skills Page – Navigation Problem](./images/skills%20page.png)
+![Skills Page – Navigation Problem](./images/Skills%20page.png)
 > The “Add Skill” section was difficult to locate.  
 > Participants reported that the layout lacked visual hierarchy and clear navigation cues.
 
 ---
 
 ### 4. Messaging Interface – Reversed Message Order
-![Messaging Interface – Message Order Issue](./images/messaging%20interface.png)
+![Messaging Interface – Message Order Issue](./images/Messaging%20interface.png)
 > Messages appeared in inconsistent order, with some older messages shown above newer ones.  
 > This reduced readability and led to confusion during message exchanges.
 
 ---
 
 ### 5. Credits Page – Raw JSON Transactions
-![Credits Page – Raw JSON Display](./images/credits%20page.png)
+![Credits Page – Raw JSON Display](./images/Credits%20page.png)
 > The credit and transaction data were presented as raw JSON text rather than a formatted, user-readable table.  
 > Participants found it difficult to interpret, confirming the need for structured data display.
 
 ---
 
 ### 6. Dashboard – Missing Credit-Request Feature
-![Dashboard – Missing Credit Request](./images/profile%20page.png)
+![Dashboard – Missing Credit Request](./images/Profile%20page.png)
 > The main dashboard contained other navigation options (Messages, Skills, Credits)  
 > but no visible **“Request Credits”** button.  
 > Participants universally expected this functionality to exist, identifying it as a major missing feature.
