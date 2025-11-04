@@ -35,11 +35,7 @@
    - Pages/Files: `src/inbox.html`, `src/js/inbox.js`
    - Success: Message delivered/received; visible in thread (≤2 min)
 
-5) View credits and recent transaction
-   - Pages/Files: `src/transactions.html`, `src/js/transactions.js`
-   - Success: Balance correct; recent item accurate (≤2 min)
-
-6) Known gap: Attempt to request credits for a completed task
+5) Known gap: Attempt to request credits for a completed task
    - Expected: Document pain point and user expectations (feature missing)
 
 ## Methodology
