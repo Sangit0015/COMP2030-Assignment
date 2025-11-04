@@ -126,7 +126,7 @@ this has been  done already.0
 ---
 
 ### 2. Profile Page – No Confirmation Feedback
-![Profile Page – No Confirmation Message](./images/profile%20page.png)
+![Profile Page – No Confirmation Message](./images/Profile%20page.png)
 > After saving, no message appeared to confirm success.  
 > Participants refreshed the page multiple times to verify changes.  
 > **Recommendation:** Add success alerts or inline confirmation banners to improve task confidence.
@@ -135,14 +135,14 @@ this has been  done already.0
 ---
 
 ### 3. Credit Request – Missing Feature
-![Credit Request Feature – Missing](./images/credits%20page.png)
+![Credit Request Feature – Missing](./images/Credits%20page.png)
 > The credit-request option did not exist, leaving users unable to confirm completed exchanges.  
 > **Recommendation:** Develop a credit-request system using a dedicated PHP file (`request_credit.php`) and database table to handle requests and approvals.
 
 ---
 
 ### 4. Messaging Interface – Message Order Issue
-![Messaging Interface – Out of Order](./images/messaging%20interface.png)
+![Messaging Interface – Out of Order](./images/Messaging%20interface.png)
 > Messages appeared in inconsistent order.  
 > **Recommendation:** Adjust backend retrieval to sort messages by timestamp.
 
