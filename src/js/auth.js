@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       try {
-        const resp = await apiGet('register', { username, email, password, display_name });
+        const resp = await api('register', { username, email, password, display_name });
         if (!resp || (!resp.success && !resp.message)) throw new Error('Registration failed');
         alert(resp.message || 'Registered successfully. You can now log in.');
         closeModalFn();
@@ -77,3 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
