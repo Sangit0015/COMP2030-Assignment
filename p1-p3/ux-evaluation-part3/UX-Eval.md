@@ -18,7 +18,7 @@
 - Recruitment: In-class peer review (same topic cohort; reciprocal testing)
 - Ethics: Verbal consent; anonymised IDs; no sensitive data
 
-## Tasks (include backend interactions)
+## Tasks
 1) Authenticate (invalid → valid), logout/login
    - Pages/Files: `src/index.php`, `src/js/auth.js`
    - Success: Logged-in state visible; no blocking errors (≤2 min)
