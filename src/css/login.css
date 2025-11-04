@@ -338,3 +338,6 @@ html, body {
   transform: scale(1.075);
   cursor: url('cursor/icons8-cursor-32.png'),auto;
 }
+.modal.open {
+  display: flex;
+}
