@@ -47,7 +47,7 @@
 - Instruments: Short demographics (age/study area); SEQ (per task, 1–7); SUS (10 items)
 - Data capture: Time‑on‑task; success/partial/fail; errors/help; observer notes; quotes/screenshots (if permitted)
 
-## Metrics for Success (temporary targets; refine after pilot)
+## Metrics for Success
 - Task completion: ≥80% success
 - Time‑on‑task: T1 ≤2m; T2 ≤2m; T3 ≤3m; T4 ≤2m; T5 ≤2m; T6 (n/a)
 - Error rate: Low; no critical blockers
