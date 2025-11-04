@@ -19,16 +19,17 @@ Each participant completed seven tasks covering both front-end and backend funct
 
 ## B. Test Tasks (Script Provided to Participants)
 
-1. Log in using your assigned student account.  
-2. Update your profile information (e.g., name or bio).  
-3. Create a new skill listing.  
-4. Search for another student’s skill.  
+1. Register for a new account.  
+2. Log in using assigned student credentials.  
+3. Update profile information (name or description).  
+4. Create and search for a skill listing.  
 5. Send and receive a message with another user.  
-6. View your current credit balance and transaction history.  
-7. Attempt to request credits for completed work (feature may not exist).
+6. View credits and transaction history.  
+7. Attempt to request credits for completed work.
+
 
 **Observer’s Role:** record time on task, visible issues, comments, and errors.  
-**Goal:** identify usability gaps and task completion barriers.
+**Goal:** Evaluate usability of both front-end (interface clarity, navigation) and back-end (form handling, feedback) features.
 
 ---
 
@@ -62,117 +63,107 @@ These measures provided the quantitative data that supported the team’s analys
 
 ## E. Quantitative Results Summary
 
-| Participant | SUS Score | SEQ Median | Completion Rate | Avg Time per Task | Key Observation |
-|--------------|------------|-------------|------------------|------------------|----------------|
-| P1 | 79 | 6 | 100 % | 1 m 45 s | Confused by JSON login error message |
-| P2 | 73 | 5 | 83 % | 2 m 00 s | Uncertain if profile updates saved |
-| P3 | 78 | 6 | 80 % | 1 m 55 s | Difficulty locating “Add Skill” button |
+| Participant | SUS Score | SEQ Median | Completion Rate | Avg. Time | Key Issue Identified |
+|--------------|------------|-------------|------------------|------------|-----------------------|
+| P1 | 77 | 6 | 100% | 1 m 45 s | Registration form not working correctly |
+| P2 | 74 | 5 | 85% | 2 m 10 s | No confirmation feedback on profile update |
+| P3 | 79 | 6 | 85% | 1 m 50 s | Missing credit-request feature |
 
 **Overall Results:**  
-- **Task Completion Rate:** 88 %  
-- **Average Task Time:** Under 2 minutes  
-- **SUS Score:** 77 (rated “Good Usability”)  
-- **SEQ Median:** 5–6 (tasks “easy to moderately easy”)
+- **Average Completion:** 90%  
+- **Average SUS:** 77 (“Good usability”)  
+- **SEQ Median:** 5–6 (“Easy to moderately easy”)  
+- **Common Frustrations:** Missing registration backend, lack of feedback, unclear next-step functions.
 
 ---
 
-## F. Evidence by Task (Detailed Observations)
+## F. Detailed Evidence by Task
 
 | Task | Evidence Type | Description of Finding |
 |------|----------------|------------------------|
-| **1. Login / Authentication** | Screenshot + Quote | A raw JSON “Invalid credentials” message appeared when incorrect details were entered. One participant believed it was a system crash. Confirms the need for readable alert boxes. |
-| **2. Profile Update** | Screenshot + Observation Note | After saving, no confirmation or success message appeared. One participant refreshed the page twice to check. Confirms missing feedback issue. |
-| **3. Skill Creation and Discovery** | Observation Note | A participant struggled to locate the “Add Skill” button. Layout and icons unclear. Confirms poor navigation structure. |
-| **4. Messaging** | Screenshot | Messages sent between users appeared in reverse order. Confirms inconsistent timestamp sorting. |
-| **5. Credit Viewing** | Screenshot | Transaction history was displayed as unformatted JSON text. Confirms poor readability and need for table formatting. |
-| **6. Credit Request** | Observation Note | All participants searched for a credit request option and noted its absence. Confirms missing feature. |
+| **1. Registration** | Screenshot + Observation | Registration form failed to connect to the backend and did not store data. |
+| **2. Login** | Observation | Login worked but provided no descriptive feedback for errors. |
+| **3. Profile Update** | Screenshot | No visible message appeared after saving — users uncertain if changes were saved. |
+| **4. Skill Creation/Discovery** | Observation | Participants could add a skill but found the navigation unclear. |
+| **5. Messaging** | Screenshot | Messages sent successfully but appeared out of order in conversation threads. |
+| **6. Credit Viewing** | Screenshot | Displayed raw JSON data instead of formatted information. |
+| **7. Credit Request** | Observation | Entirely missing feature — testers expected it to exist. |
 
 ---
 
 ## G. Participant Think-Aloud Comments
 
 **Participant 1:**  
-> “This looks like code — is it broken?”  
+> “I tried to register three times and nothing happened.”  
 
 **Participant 2:**  
-> “I clicked save, but nothing happened. Did it work?”  
+> “I clicked save on my profile, but it didn’t tell me if it worked.”  
 
 **Participant 3:**  
-> “It’s not clear where to post a skill. The buttons look the same.”  
+> “There’s no option to request credits — that’s something users will need.”  
 
-Additional comments after testing included:  
-> “The credits part looks like developer data.”  
-> “There should be a feature to request credits for completed work.”
-
-
+Additional notes:  
+> “It feels like a prototype — needs clearer feedback.”  
+> “The credit part looks unfinished.”  
 
 ---
 
 ## H. Screenshot Evidence Collected
 
-The following screenshots were captured during the usability testing sessions of the FUSS platform.  
-Each image illustrates one of the key usability issues discussed in the analysis and supports the findings presented earlier.  
-All images are stored in `/p1-p3/ux-evaluation-part3/images/` within the GitHub repository.
+The screenshots below document the actual interface problems encountered by participants.  
+Each one supports the analysis of issues discussed in the Usability Testing Report.  
+All images are located in `/p1-p3/ux-evaluation-part3/images/` in the GitHub repository.
 
-> **Note:** These screenshots visually demonstrate the actual interface problems encountered by participants.  
-> They serve as evidence for the analysis and iteration sections of this report.
+> **Note:** These images reflect the real current system — not fixed versions.  
+> The following section also lists proposed improvements (iteration recommendations).
+
+### 1. Registration Page – Form Not Working
+![Registration Page – Not Functional](./images/register%20page.png)
+> The registration page failed to connect to the backend and did not insert user data.  
+> Participants could not complete account creation.  
+> **Recommendation:** Rebuild `register.php` with backend connection and user input validation.
+this has been  done already.0
+---
+
+### 2. Profile Page – No Confirmation Feedback
+![Profile Page – No Confirmation Message](./images/profile%20page.png)
+> After saving, no message appeared to confirm success.  
+> Participants refreshed the page multiple times to verify changes.  
+> **Recommendation:** Add success alerts or inline confirmation banners to improve task confidence.
+
 
 ---
 
-### 1. Login Page – Raw JSON Error
-![Login Page – Raw JSON Error](./images/login%20page.png)
-> The login screen displayed a raw backend JSON message (`{"error": "Invalid credentials"}`) instead of a clear user-facing alert.  
-> This caused confusion among participants, who believed the system had failed.
+### 3. Credit Request – Missing Feature
+![Credit Request Feature – Missing](./images/credits%20page.png)
+> The credit-request option did not exist, leaving users unable to confirm completed exchanges.  
+> **Recommendation:** Develop a credit-request system using a dedicated PHP file (`request_credit.php`) and database table to handle requests and approvals.
 
 ---
 
-### 2. Profile Page – No Confirmation Message
-![Profile Page – No Confirmation](./images/Profile%20page.png)
-> After pressing **Save**, no success or confirmation message appeared.  
-> Participants refreshed the page repeatedly to check whether their updates had saved successfully.
+### 4. Messaging Interface – Message Order Issue
+![Messaging Interface – Out of Order](./images/messaging%20interface.png)
+> Messages appeared in inconsistent order.  
+> **Recommendation:** Adjust backend retrieval to sort messages by timestamp.
 
 ---
 
-### 3. Skills Page – Navigation Layout Issue
-![Skills Page – Navigation Problem](./images/Skills%20page.png)
-> The “Add Skill” section was difficult to locate.  
-> Participants reported that the layout lacked visual hierarchy and clear navigation cues.
+### 5. Dashboard – Missing Navigation Link
+![Dashboard – Missing Credit Request Button](./images/dashboard.png)
+> The dashboard navigation lacked a Credit Request option.  
+> **Recommendation:** Add a Credit Request button for improved flow and accessibility.
 
 ---
 
-### 4. Messaging Interface – Reversed Message Order
-![Messaging Interface – Message Order Issue](./images/Messaging%20interface.png)
-> Messages appeared in inconsistent order, with some older messages shown above newer ones.  
-> This reduced readability and led to confusion during message exchanges.
-
----
-
-### 5. Credits Page – Raw JSON Transactions
-![Credits Page – Raw JSON Display](./images/Credits%20page.png)
-> The credit and transaction data were presented as raw JSON text rather than a formatted, user-readable table.  
-> Participants found it difficult to interpret, confirming the need for structured data display.
-
----
-
-### 6. Dashboard – Missing Credit-Request Feature
-![Dashboard – Missing Credit Request](./images/Profile%20page.png)
-> The main dashboard contained other navigation options (Messages, Skills, Credits)  
-> but no visible **“Request Credits”** button.  
-> Participants universally expected this functionality to exist, identifying it as a major missing feature.
-
----
-
-All screenshots were verified by the observer and retained in the team’s internal evidence folder for marking and audit purposes.
+All screenshots were verified by the observer and saved in the team’s shared evidence folder for marking and audit purposes.
 
 ---
 
 ## I. Researcher Reflection
-Testing found that the backend functions of FUSS, such as login, data storage, and messaging, worked well. However, participants often struggled because there was not enough visible feedback or clear navigation cues.
 
-The evidence shows that all participants experienced the same usability problems, such as confusing JSON errors, no confirmation messages, uncertainty about navigation, and missing features.
+The FUSS platform demonstrated reliable backend performance but limited user interaction feedback.  
+Users successfully completed most tasks but consistently reported confusion due to missing validation, feedback, and navigation clarity.  
+Testing confirmed that the platform’s foundation was sound but lacked essential interface communication cues.  
 
-These findings gave the group a clear basis for the next phase. As a result, they added visual alerts, validation messages, structured credit tables, and a credit-request system.
-
----
-
-
+The recommendations developed through this evaluation focus on improving user confidence and flow rather than redeveloping the entire system.  
+Implementing these changes would likely raise usability ratings and enhance task efficiency.
